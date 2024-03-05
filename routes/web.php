@@ -25,3 +25,6 @@ Route::get('/about', function () {
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 // Create additional Routes below
+Route::get('/login', [AuthController::class, 'create'])->name('login');
+
+Route::post('/login', [AuthController::class, 'store']);
