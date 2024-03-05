@@ -9,8 +9,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 class DashboardController extends Controller
 {
-    public function index(): View
+    public function index(): view
     {
-        return view('dashboard');
+        $clients = Client::all();
+
+        return view('dashboard', compact('clients'));
     }
 }
